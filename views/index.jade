@@ -1,5 +1,27 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #root
+    .top-bar
+      .top-bar-title
+        p Express        
+    .side-bar
+      .side-bar-content
+        h2 SIDEBAR CONTENT TITLE
+        li: a(href='https://hfrk.herokuapp.com/') index
+        li: a(href='https://hfrk.herokuapp.com/users/') users
+        li: a(href='https://hfrk.herokuapp.com/echo/') echo
+        li: a(href='https://hfrk.herokuapp.com/secret/') secret
+        p.
+          strong FOO:
+          foobar lorem ipsum
+    .main-wrap
+      h2 MAIN CONTENT TITLE
+      .main-content
+        li: a(href='https://hfrk.herokuapp.com/') index
+        li: a(href='https://hfrk.herokuapp.com/users/') users
+        li: a(href='https://hfrk.herokuapp.com/echo/') echo
+        li: a(href='https://hfrk.herokuapp.com/secret/') secret
+        p.
+          strong FOO:
+          foobar lorem ipsum
