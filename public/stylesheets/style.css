@@ -1,5 +1,5 @@
 body {
-  font: 20px "Courier New", Courier, monospace;
+  font: 20px, "Courier New", Courier, monospace;
   color: #123456;
   background-color: #dadada;
   margin: 0px;
@@ -15,6 +15,7 @@ body {
 
 .top-bar-title {
   text-align: center;
+  font: 36px, Verdana, Tahoma, sans-serif;
   color: aqua;
   margin: auto;
   width: fit-content;
