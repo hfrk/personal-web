@@ -4,4 +4,39 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    #root 
+      .top-bar 
+        .side-btn-container 
+          button(id='btn-side', onclick='someFunction()', type='button') 三 
+        .title-container
+          strong HFRK.DEV 
+        .navbar
+           ul
+             li: a(href='#Home') Home 
+             li: a(href='#Blog') Blog 
+             li: a(href='#About') About 
+        .searchbar-container
+          .searchbar
+            input(type='text', id='search', name='search', placeholder='Search...', oninput='search()')
+      .side-bar#side-bar
+        .side-bar-content
+        .side-bar-footer
+      .main-wrap#main-wrap
+        .main-content
+          block content
+    script.
+      function someFunction(){
+        let side = document.getElementById('side-bar');
+        let main = document.getElementById('main-wrap');
+        
+        if(side.style.width === '0%'){
+          side.style.width = '20%';
+          main.style.left = '20%';
+        } else{
+          side.style.width = '0%';
+          main.style.left = '0%';
+        }
+      }
+      function search(){
+        alert("search");
+      }
