@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Canvas</title>
+    <style type="text/css">
+        #container { position: relative; }
+        #imageView { border: 1px solid #000; }
+        #imageTemp { position: absolute; top: 1px; left: 1px; }
+        </style>
+    </head>
+    <body>
+        <p>
+            <label>Drawing tool: <select id="dtool">
+                <option value="line">Line</option>
+                <option value="rect">Rectangle</option>
+                <option value="pencil">Pencil</option>
+                </select>
+            </label>
+        </p>
+        <div id="container">
+            <canvas id="imageView" width="400" height="300"></canvas>
+            <canvas id="imageTemp" width="400" height="300"></canvas>
+        </div>
+        <script type="text/javascript" src="./javascript/canvas.js"></script>
+    </body>
+</html>
