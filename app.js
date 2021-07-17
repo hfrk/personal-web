@@ -9,7 +9,6 @@ var usersRouter = require('./routes/users');
 var echoRouter = require('./routes/echo');
 var secretRouter = require('./routes/secret');
 var testRouter = require('./routes/test');
-var canvasRouter = require('./routes/canvas');
 
 var app = express();
 
