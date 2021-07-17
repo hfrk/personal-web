@@ -28,7 +28,10 @@ app.use('/users', usersRouter);
 app.use('/echo', echoRouter);
 app.use('/secret', secretRouter);
 app.use('/test', testRouter);
-app.use('/canvas', canvasRouter);
+app.use('/canvas', function(req, res, next) {
+    res.status(200);
+    res.sendFile(path.join(__dirname, 'public/canvas.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
