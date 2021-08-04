@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var echoRouter = require('./routes/echo');
 var secretRouter = require('./routes/secret');
 var testRouter = require('./routes/test');
+var blogRouter = require('./routes/blog');
 
 var app = express();
 
@@ -25,10 +26,12 @@ app.use('/', indexRouter);
 app.use('/echo', echoRouter);
 app.use('/secret', secretRouter);
 app.use('/test', testRouter);
+app.use('/blog', blogRouter);
 app.use('/canvas', function(req, res, next) {
     res.status(200);
     res.sendFile(path.join(__dirname, 'public/canvas.html'));
 });
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,8 +47,10 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('pages/error', (err, content) => {
-      res.render('pages/layout', { title: 'Error', content: content });
+      res.render('pages/layout', { title: `Error`, content: content });
   });
 });
+
+app.listen(8080);
 
 module.exports = app;

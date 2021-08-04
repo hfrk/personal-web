@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% if(title) { %>
+        <title><%= title %></title>
+        <% } else { %>
+        <title>Hfrk's</title>
+        <% } %>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <link rel="icon" href="/images/favicon-negative.png">
+    </head>
+    <body>
+        <div id="root">
+            <div class="top-bar">
+                <%- include("../partials/top-bar.ejs") %>
+            </div>
+            <div id="side-bar" class="side-bar" style="width: 0%;">
+                <div class="side-bar-content"></div>
+                <div class="side-bar-footer"></div>
+            </div>
+            <div id="main-wrap" class="main-wrap" style="left: 0%;">
+                <div class="main-content">
+                    <%- content %>
+                </div>
+            </div>
+        </div>
+        <script>
+function someFunction() {
+    let side = document.getElementById('side-bar');
+    let main = document.getElementById('main-wrap');
+
+    if (side.style.width === '0%') {
+        side.style.width = '20%';
+        main.style.left = '20%';
+    } else {
+        side.style.width = '0%';
+        main.style.left = '0%';
+    }
+}
+function search() {
+    alert("search");
+}
+        </script>
+    </body>
+</html>

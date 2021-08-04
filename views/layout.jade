@@ -3,6 +3,7 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='icon', href='/images/favicon-negative.png')
   body
     #root 
       .top-bar 
@@ -12,9 +13,9 @@ html
           strong HFRK.DEV 
         .navbar
            ul
-             li: a(href='#Home') Home 
-             li: a(href='#Blog') Blog 
-             li: a(href='#About') About 
+             li: a(href='/') Home 
+             li: a(href='/blog') Blog 
+             li: a(href='/about') About 
         .searchbar-container
           .searchbar
             input(type='text', id='search', name='search', placeholder='Search...', oninput='search()')
