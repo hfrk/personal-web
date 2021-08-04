@@ -115,4 +115,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-app-test.js
+app-local.js
