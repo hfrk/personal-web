@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
-app.use(express.json());
+app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -36,7 +36,7 @@ app.get('/jadwalkuliah', function(req, res, next) {
     res.status(200);
     res.sendFile(path.join(__dirname, 'not_public/jadwalkuliah.json'));
 });
-app.post('/jadwalkuliah', express.json(), async (req, res) => {
+app.post('/jadwalkuliah', async (req, res) => {
     if (req.get("Authorization") === process.env.AUTH_JADWAL){
         fs.writeFile(path.join(__dirname, 'not_public/jadwalkuliah.json'), JSON.stringify(req.body, null, 4), (err) => {
             if (err) {
